@@ -36,7 +36,7 @@ if (args[0] === "spotify-this-song") {
 if (args[0] === "do-what-it-says") {
   fs.feadFile("random.txt", "utf8", function (error, data) {
 
-    // Provide error message for errors
+    //Provide error message for errors
     if (error) {
       return console.log(error);
     }
@@ -62,3 +62,19 @@ if (args[0] === "do-what-it-says") {
   });
 };
 
+//Pulls 5 tracks from Spotify
+function spotifySong(songName) {
+  spotify.search({ type: 'track', query: songName, limit: 5 }, function (err, data) {
+    if(err) {
+      return console.log('Error occurred: ' + err);
+    }
+
+    data.tracks.items.forEach(function (element) {
+      console.log("");
+      console.log(`Artist: ${element.artist[0].name}`);
+      console.log(`Song: ${songName}`);
+      console.log(`Spotify Preview Link: ${element.preview_url}`);
+      console.log(`Album: ${element.album.name}`);
+    });
+  })
+};
