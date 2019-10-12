@@ -31,3 +31,34 @@ if (args[0] === "spotify-this-song") {
     spotifySong(songTitle);
   }
 };
+
+//Command line "do-what-it-says" random.txt will perform one of two functions
+if (args[0] === "do-what-it-says") {
+  fs.feadFile("random.txt", "utf8", function (error, data) {
+
+    // Provide error message for errors
+    if (error) {
+      return console.log(error);
+    }
+
+    dataArr = data.split(",");
+    if (dataArr[0] === "movie-this") {
+      if (dataArr[1] === undefined) {
+        getMovie("Mr.+Nobody")
+      }
+      else {
+        getMovie(dataArr[1].split().join("+"))
+      }
+    };
+
+    if (dataArr[0] === "spotify-this-song") {
+      if (dataArr[1] === undefined) {
+        spotifySong("The Sign")
+      }
+      else {
+        spotifySong(dataArr[1])
+      }
+    };
+  });
+};
+
