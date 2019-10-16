@@ -14,6 +14,14 @@ LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a co
     - In order to find a info on a particular song. In the terminal type node liri.js spotify-this-song "song name"
     - In order to find info based off the random.txt file. In the terminal type node liri.js do-what-it-says
 
-4. Images are located in the image file.
+4. Images are located in the "Images" file.
+
+5. Deployed Version of the App: https://willaltherr.github.io/liri-node-app/, https://github.com/willaltherr/liri-node-app
+
+6. The technologies used in this app are:
+    - Javascript
+    - Node.js
+
+7. I created this app myself and utilized outside resources in order to complete it: https://www.npmjs.com/, http://www.alexrojas.org/liri-node-app/
 
 
